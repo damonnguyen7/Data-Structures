@@ -1,5 +1,5 @@
 # Data-Structures
-Stacks, Queues, Linked List, Trees, Graph
+A collection of data structures I am building and testing for practice purposes.
 
 Install dependencies
 `npm i`
