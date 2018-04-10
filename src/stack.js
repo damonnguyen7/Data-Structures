@@ -18,46 +18,46 @@ function Stack(maxStackLength) {
   this.stack = {};
   this.size = 0;
   this.max = maxStackLength;
+};
 
-  this.getSize = function() {
-    return this.size;
-  };
+Stack.prototype.getSize = function() {
+  return this.size;
+};
 
-  this.isEmpty = function() {
-    return this.size === 0 ? true : false;
-  };
+Stack.prototype.isEmpty = function() {
+  return this.size === 0 ? true : false;
+};
 
-  this.top = function() {
-    const stackIsNotEmpty = !this.isEmpty();
-    if (stackIsNotEmpty) {
-      return this.stack[this.size];
-    } else {
-      return false;
-    }
-  };
+Stack.prototype.top = function() {
+  const stackIsNotEmpty = !this.isEmpty();
+  if (stackIsNotEmpty) {
+    return this.stack[this.size];
+  } else {
+    return false;
+  }
+};
 
-  this.isFull = function() {
-    return this.size < this.max ? false : true;
-  };
+Stack.prototype.isFull = function() {
+  return this.size < this.max ? false : true;
+};
 
-  this.push = function(value) {
-    this.size++;
-    this.stack[this.size] = value;
-  };
+Stack.prototype.push = function(value) {
+  this.size++;
+  this.stack[this.size] = value;
+};
 
-  this.pop = function() {
-    const stackIsNotEmpty = !this.isEmpty();
-    const isNotFull = !this.isFull();
+Stack.prototype.pop = function() {
+  const stackIsNotEmpty = !this.isEmpty();
+  const isNotFull = !this.isFull();
 
-    if (stackIsNotEmpty && isNotFull) {
-      let poppedValue = this.stack[this.size];
-      delete this.stack[this.size];
-      this.size--;
-      return poppedValue;
-    } else {
-      return false;
-    }
-  };
+  if (stackIsNotEmpty && isNotFull) {
+    let poppedValue = this.stack[this.size];
+    delete this.stack[this.size];
+    this.size--;
+    return poppedValue;
+  } else {
+    return false;
+  }
 };
 
 module.exports = Stack;
